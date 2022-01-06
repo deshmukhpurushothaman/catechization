@@ -4,7 +4,7 @@ import wallpaper from './macbook.jpg';
 import { Col, Container, Row, Card } from 'react-bootstrap';
 
 const HomeScreen = ({ history }) => {
-  const { userInfo } = useSelector(state => state.userLogin);
+  const { userInfo } = useSelector((state) => state.userLogin);
   useEffect(() => {
     if (!userInfo) {
       // history.push("/login");
@@ -12,7 +12,7 @@ const HomeScreen = ({ history }) => {
   }, []);
 
   return (
-    <div className="bgcolor">
+    <div className='bgcolor'>
       <img src={wallpaper} style={{ width: '100%', height: '100vh' }} />
       <div
         style={{
@@ -21,13 +21,14 @@ const HomeScreen = ({ history }) => {
           left: '16px',
           color: 'white',
           fontSize: '4vw',
+          fontFamily: 'sans-serif',
         }}
       >
-        ExamBit:
+        Catechization -
         <br />
-        Online Examination System
+        Deployment using Docker and Kubernetes
       </div>
-      <Container className="my-3 ">
+      {/* <Container className='my-3 '>
         <Row>
           <Col>
             <h2 style={{ color: 'black' }}>FEATURES</h2>
@@ -35,10 +36,10 @@ const HomeScreen = ({ history }) => {
         </Row>
         <Row>
           <Col sm={12} md={6} lg={4} xl={3}>
-            <Card className="my-3 p-3 rounded text-center">
-              <Card.Header variant="dark" style={{ color: 'black' }}>
-                <Card.Title as="div">
-                  <i className="fas fa-microphone fa-3x"></i>
+            <Card className='my-3 p-3 rounded text-center'>
+              <Card.Header variant='dark' style={{ color: 'black' }}>
+                <Card.Title as='div'>
+                  <i className='fas fa-microphone fa-3x'></i>
                   <br />
                   <strong>Audio Proctoring</strong>
                 </Card.Title>
@@ -47,10 +48,10 @@ const HomeScreen = ({ history }) => {
             </Card>
           </Col>
           <Col sm={12} md={6} lg={4} xl={3}>
-            <Card className="my-3 p-3 rounded text-center">
-              <Card.Header variant="dark" style={{ color: 'black' }}>
-                <Card.Title as="div">
-                  <i className="fas fa-camera fa-3x"></i>
+            <Card className='my-3 p-3 rounded text-center'>
+              <Card.Header variant='dark' style={{ color: 'black' }}>
+                <Card.Title as='div'>
+                  <i className='fas fa-camera fa-3x'></i>
                   <br />
                   <strong>Snapshots</strong>
                 </Card.Title>
@@ -59,10 +60,10 @@ const HomeScreen = ({ history }) => {
             </Card>
           </Col>
           <Col sm={12} md={6} lg={4} xl={3}>
-            <Card className="my-3 p-3 rounded text-center">
-              <Card.Header variant="dark" style={{ color: 'black' }}>
-                <Card.Title as="div">
-                  <i className="fas fa-file-download fa-3x"></i>
+            <Card className='my-3 p-3 rounded text-center'>
+              <Card.Header variant='dark' style={{ color: 'black' }}>
+                <Card.Title as='div'>
+                  <i className='fas fa-file-download fa-3x'></i>
                   <br />
                   <strong>Download Result</strong>
                 </Card.Title>
@@ -71,10 +72,10 @@ const HomeScreen = ({ history }) => {
             </Card>
           </Col>
           <Col sm={12} md={6} lg={4} xl={3}>
-            <Card className="my-3 p-3 rounded text-center">
-              <Card.Header variant="dark" style={{ color: 'black' }}>
-                <Card.Title as="div">
-                  <i className="fas fa-chart-bar fa-3x"></i>
+            <Card className='my-3 p-3 rounded text-center'>
+              <Card.Header variant='dark' style={{ color: 'black' }}>
+                <Card.Title as='div'>
+                  <i className='fas fa-chart-bar fa-3x'></i>
                   <br />
                   <strong>Graphical Form</strong>
                 </Card.Title>
@@ -83,10 +84,10 @@ const HomeScreen = ({ history }) => {
             </Card>
           </Col>
           <Col sm={12} md={6} lg={4} xl={3}>
-            <Card className="my-3 p-3 rounded text-center">
-              <Card.Header variant="dark" style={{ color: 'black' }}>
-                <Card.Title as="div">
-                  <i className="fas fa-file-pdf fa-3x"></i>
+            <Card className='my-3 p-3 rounded text-center'>
+              <Card.Header variant='dark' style={{ color: 'black' }}>
+                <Card.Title as='div'>
+                  <i className='fas fa-file-pdf fa-3x'></i>
                   <br />
                   <strong>Pdf upload</strong>
                 </Card.Title>
@@ -97,10 +98,10 @@ const HomeScreen = ({ history }) => {
             </Card>
           </Col>
           <Col sm={12} md={6} lg={4} xl={3}>
-            <Card className="my-3 p-3 rounded text-center">
-              <Card.Header variant="dark" style={{ color: 'black' }}>
-                <Card.Title as="div">
-                  <i className="fas fa-file fa-3x"></i>
+            <Card className='my-3 p-3 rounded text-center'>
+              <Card.Header variant='dark' style={{ color: 'black' }}>
+                <Card.Title as='div'>
+                  <i className='fas fa-file fa-3x'></i>
                   <br />
                   <strong>Assignment</strong>
                 </Card.Title>
@@ -111,10 +112,10 @@ const HomeScreen = ({ history }) => {
             </Card>
           </Col>
           <Col sm={12} md={6} lg={4} xl={3}>
-            <Card className="my-3 p-3 rounded text-center">
-              <Card.Header variant="dark" style={{ color: 'black' }}>
-                <Card.Title as="div">
-                  <i className="fas fa-users fa-3x"></i>
+            <Card className='my-3 p-3 rounded text-center'>
+              <Card.Header variant='dark' style={{ color: 'black' }}>
+                <Card.Title as='div'>
+                  <i className='fas fa-users fa-3x'></i>
                   <br />
                   <strong>Groups</strong>
                 </Card.Title>
@@ -125,10 +126,10 @@ const HomeScreen = ({ history }) => {
             </Card>
           </Col>
           <Col sm={12} md={6} lg={4} xl={3}>
-            <Card className="my-3 p-3 rounded text-center">
-              <Card.Header variant="dark" style={{ color: 'black' }}>
-                <Card.Title as="div">
-                  <i className="fas fa-chart-line fa-3x"></i>
+            <Card className='my-3 p-3 rounded text-center'>
+              <Card.Header variant='dark' style={{ color: 'black' }}>
+                <Card.Title as='div'>
+                  <i className='fas fa-chart-line fa-3x'></i>
                   <br />
                   <strong>Track Progress</strong>
                 </Card.Title>
@@ -137,10 +138,10 @@ const HomeScreen = ({ history }) => {
             </Card>
           </Col>
           <Col sm={12} md={6} lg={4} xl={3}>
-            <Card className="my-3 p-3 rounded text-center">
-              <Card.Header variant="dark" style={{ color: 'black' }}>
-                <Card.Title as="div">
-                  <i className="fas fa-file-signature fa-3x"></i>
+            <Card className='my-3 p-3 rounded text-center'>
+              <Card.Header variant='dark' style={{ color: 'black' }}>
+                <Card.Title as='div'>
+                  <i className='fas fa-file-signature fa-3x'></i>
                   <br />
                   <strong>Competitive Exam/Interview Test</strong>
                 </Card.Title>
@@ -152,10 +153,10 @@ const HomeScreen = ({ history }) => {
             </Card>
           </Col>
           <Col sm={12} md={6} lg={4} xl={3}>
-            <Card className="my-3 p-3 rounded text-center">
-              <Card.Header variant="dark" style={{ color: 'black' }}>
-                <Card.Title as="div">
-                  <i className="fas fa-check-square fa-3x"></i>
+            <Card className='my-3 p-3 rounded text-center'>
+              <Card.Header variant='dark' style={{ color: 'black' }}>
+                <Card.Title as='div'>
+                  <i className='fas fa-check-square fa-3x'></i>
                   <br />
                   <strong>Automatic Result Generate</strong>
                 </Card.Title>
@@ -166,7 +167,7 @@ const HomeScreen = ({ history }) => {
             </Card>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
     </div>
   );
 };

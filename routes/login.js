@@ -1,25 +1,26 @@
-const { User } = require("../models/user");
-const { jwtPrivateKey } = require("../config/keys");
+const { User } = require('../models/user');
+const { jwtPrivateKey } = require('../config/keys');
 
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
-const express = require("express");
-const { validateSignin } = require("../services/validation");
+const express = require('express');
+const { validateSignin } = require('../services/validation');
 const router = express.Router();
 
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
+  console.log('Login body ', req.body);
   const { error } = validateSignin(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
   const user = await User.findOne({ email: req.body.email });
-  if (!user) return res.status(401).send("Invalid email or password");
+  if (!user) return res.status(401).send('Invalid email or password');
 
   const validPassword = await bcrypt.compare(req.body.password, user.password);
-  if (!validPassword) return res.status(401).send("Invalid email or password");
+  if (!validPassword) return res.status(401).send('Invalid email or password');
 
-  if (user.category === "SUPERVISOR" && user.supervisorPerm === false) {
-    return res.status(403).send("Permission not granted");
+  if (user.category === 'SUPERVISOR' && user.supervisorPerm === false) {
+    return res.status(403).send('Permission not granted');
   }
 
   const token = jwt.sign({ _id: user._id }, jwtPrivateKey);

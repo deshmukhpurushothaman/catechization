@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const { MONOGOURI } = require('./config/keys');
 const createadmin = require('./services/createAdmin');
 const app = express();
@@ -30,6 +31,7 @@ app.use(
     parameterLimit: 50000,
   })
 );
+app.use(cors());
 app.use(express.json());
 app.use('/api/login', login);
 app.use('/api/signup', signup);
@@ -43,6 +45,10 @@ app.use('/api/audio', audio);
 
 app.use('/api/groups', groups);
 //createadmin();
+
+app.get('/', function (req, res) {
+  res.send('Connected to server  catechization');
+});
 
 if (process.env.NODE_ENV == 'production') {
   app.use(express.static('client/build'));

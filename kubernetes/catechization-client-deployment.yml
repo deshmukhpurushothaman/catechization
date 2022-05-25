@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: catechization-client
-          image: deshmukhp/catechization-client
+          image: localhost:5000/catechization-client
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000

@@ -13,7 +13,7 @@ spec:
         - name: dockerauth
       containers:
         - name: catechization-server
-          image: deshmukhp/catechization-server
+          image: localhost:5000/catechization-server
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3900

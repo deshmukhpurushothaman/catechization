@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catechization-server-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: catechization-server
+    spec:
+      imagePullSecrets:
+        - name: dockerauth
+      containers:
+        - name: catechization-server
+          image: localhost:5000/catechization-server
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3900
+              name: nodejs-port
+  selector:
+    matchLabels:
+      app: catechization-server

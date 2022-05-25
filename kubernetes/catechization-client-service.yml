@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: catechization-client-service
+spec:
+  ports:
+    - port: 3000
+      protocol: TCP
+      # targetPort: http-port
+      # targetPort: 8000
+  # externalIPs:
+  #   - 127.0.0.1
+  selector:
+    app: catechization-client
+  type: LoadBalancer
